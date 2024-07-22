@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-$y-s(f7ocwfs_=+4%-bo8y7#0cjv0d6tv)dai9uonv)r_%mhn7
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = 'login'
 
 # Application definition
 
@@ -28,6 +28,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # app
     'users',
+    'shop',
+    'shopdetail',
+    'contact',
+    'cart',
+    'home',
+    'chackout',
+    'testimonial',
+    'import_export',
 
 ]
 
@@ -112,13 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-# MEDIA_ROOT = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR / 'media'),
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR / 'static')
-),
+STATICFILES_DIRS = [
+    (BASE_DIR / 'static'),
+]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
